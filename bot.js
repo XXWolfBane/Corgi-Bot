@@ -63,7 +63,7 @@ bot.on("message", message => {
   con.query(`SELECT * FROM corgi_bot_a WHERE id = '${message.author.id}'`, (err, rows) => {
     let sql;
     if(rows.length < 1) {
-      sql = `INSERT INTO corgi_bot_a (id, ubl, developer)` VALUES ('${message.author.id}', '0', '0')
+      sql = `INSERT INTO corgi_bot_a (id, ubl, developer)` VALUES ('${message.author.id}', '0', '0')`
     } else {
       return;
     }
