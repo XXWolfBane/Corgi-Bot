@@ -56,7 +56,7 @@ con.connect(err => {
 }) // Tests if the bot can connect.
 
 bot.on("message", message => {
-con.query(`SELECT * FROM twf_xp WHERE id = '${message.author.id}'`, (err, rows) => {
+con.query(`SELECT * FROM corgi_bot WHERE id = '${message.author.id}'`, (err, rows) => {
     if(err) throw err
     
   let sql;
