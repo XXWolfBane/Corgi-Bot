@@ -69,7 +69,7 @@ bot.on("message", message => {
     }
     con.query(sql, console.log);
     
-  }
+  })
 })
 
 
