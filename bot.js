@@ -34,6 +34,51 @@ bot.on('ready', () => {
     console.log("Corgi is alive!")
 })
 
+//Sql stuff
+
+const mysql = require("mysql")
+
+function generateXP() {
+  return Math.floor(Math.random() * (15 - 1 + 1)) + 10;
+} //Sexy num gen function
+
+var con = mysql.createConnection({
+  host: "remotemysql.com",
+  user: "xqKVpmRNaL",
+  password: process.env.sqlpass,
+  database: "xqKVpmRNaL"
+})
+
+con.connect(err => {
+  if(err) throw err;
+  console.log("connected.")
+  con.query("SHOW TABLES", console.log)
+}) // Tests if the bot can connect.
+
+bot.on("message", message => {
+con.query(`SELECT * FROM twf_xp WHERE id = '${message.author.id}'`, (err, rows) => {
+    if(err) throw err
+    
+  let sql;
+    
+    if(message.content == ".xp") return;
+    if(message.author.bot) return;
+  
+    if(rows.length < 1 ) {
+      sql =  `INSERT INTO corgi_bot (id, xp) VALUES ('${message.author.id}', ${generateXP()})`
+    } else {
+    let xp = rows[0].xp;
+      sql = `UPDATE corgi_bot SET xp = ${xp + generateXP()} WHERE id = '${message.author.id}'`
+    }
+  con.query(sql, console.log);
+  })
+}) // I want to fucking die.
+
+
+
+
+
+
   bot.on('message', message => {
   let mArray = message.content.split(" ")
   let args = mArray.slice(1)
