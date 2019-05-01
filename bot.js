@@ -13,24 +13,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on('ready', () => {
-  var statuses = [`Over ${bot.guilds.size} servers!`, "For !help", "Supporting your servers!"]
-  var result = statuses[Math.floor(Math.random() * statuses.length)]
-  bot.user.setActivity(`Loading Corgi Bot...`, {type: "STREAMING", url: "https://twitch.tv/freakinghulk"})
-  setTimeout(() => {
-    setInterval(() => {
-      if (result == statuses[0]) {
-        bot.user.setActivity(result, {type: "WATCHING"})
-      }
-   
-      if (result == statuses[1]) {
-        bot.user.setActivity(result, {type: "LISTENING"})
-      }
-   
-      if (result == statuses[2]) {
-        bot.user.setActivity(result, {type: "PLAYING"})
-      }
-    }, 25000)
-  }, 10000)
+ bot.user.setStatus(`Watching over {bot.guilds.size} servers.`)
     console.log("Corgi is alive!")
 })
 
