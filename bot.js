@@ -13,7 +13,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on('ready', () => {
- bot.user.setStatus(`Watching over {bot.guilds.size} servers.`)
+ bot.user.setStatus(`Corgi version: 0.05`)
     console.log("Corgi is alive!")
 })
 
