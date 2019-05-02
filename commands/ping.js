@@ -1,4 +1,4 @@
-module.exports.run = (bot, message, args, Discord) => {
+module.exports.run = (bot, message, args, Discord, con) => {
   let em = new Discord.RichEmbed
   .setTitle("Corgi Bot's Ping")
   .setDescription("Heres my ping with Discord!")
