@@ -1,10 +1,5 @@
 module.exports.run = (bot, message, args, Discord, con) => {
-  let em = new Discord.RichEmbed
-  .setTitle("Corgi Bot's Ping")
-  .setDescription("Heres my ping with Discord!")
-  .addField("Ping:", Math.floor(bot.ping))
-  
-  message.channel.send({embed: em})
+console.log("Not broken")
 }
 
 module.exports.help = {
