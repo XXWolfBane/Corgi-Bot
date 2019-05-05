@@ -3,6 +3,7 @@ module.exports.run = (bot, message, args, Discord, con) => {
   .setTitle("Our Discord!")
   .setDescription("You can join this server for support!")
   .addField("Click", `[here](https://discord.gg/QSzVUnZ) to join!`)
+  .setColor("GREEN")
   
   message.channel.send({embed:em})
 }
