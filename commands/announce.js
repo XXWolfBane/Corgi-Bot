@@ -18,7 +18,7 @@ function sendAnnounce(bot, message, args, guild) {
   let announce = new discord.RichEmbed()
     .setColor("7289DA")
     .setAuthor(`${bot.user.username} Announcement`)
-    .setDescription(`**Hello there! The creator of Corgi Bot, need to send you an announcement. Here it is! **\n${args.join(' ')}\n\n**This message was sent to *${guild.name}* on purpose from the creator.**\n*Please be aware that this announcement system will not be spammed.*`)
+    .setDescription(`**Hello there! The creator of Corgi Bot, need to send you an announcement. Here it is! **\n${args.join(' ')} \n\n**This message was sent to *${guild.name}* on purpose from the creator.**\n*Please be aware that this announcement system will not be spammed.*`)
     .setFooter(`An official announcement from Wolfy and FHGDev.`, bot.user.avatarURL)
     .setTimestamp();
 
@@ -40,7 +40,7 @@ module.exports.run = (bot, message, args) => {
   let announceTest = new discord.RichEmbed()
     .setColor("7289DA")
     .setAuthor(`Test Announcement`, bot.user.avatarURL)
-    .setDescription(``**Hello there! The creator of Corgi Bot, need to send you an announcement. Here it is! **\n${args.join(' ')}\n\n**This message was sent to *${guild.name}* on purpose from the creator.**\n*Please be aware that this announcement system will not be spammed.**`)
+    .setDescription(`**Hello there! The creator of Corgi Bot, need to send you an announcement. Here it is! **\n${args.join(' ')}\n\n**This message was sent to *${guild.name}* on purpose from the creator.**\n*Please be aware that this announcement system will not be spammed.**`)
     .setFooter(`Test Example; reply with yes to send to every server!`)
     .setTimestamp();
 
