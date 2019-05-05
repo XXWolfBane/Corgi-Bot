@@ -48,7 +48,7 @@ con.query(`SELECT * FROM corgi_bot WHERE id = '${message.author.id}'`, (err, row
     if(message.author.bot) return;
   
     if(rows.length < 1 ) {
-      sql =  `INSERT INTO corgi_bot (id, xp, money) VALUES ('${message.author.id}', ${generateXP()}), '0'`
+      sql =  `INSERT INTO corgi_bot (id, xp, money) VALUES ('${message.author.id}', ${generateXP()}), 0`
     } else {
     let xp = rows[0].xp;
       sql = `UPDATE corgi_bot SET xp = ${xp + generateXP()} WHERE id = '${message.author.id}'`
