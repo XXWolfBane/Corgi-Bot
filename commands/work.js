@@ -5,11 +5,11 @@ module.exports.run = (bot, message, args, Discord, con) => {
 
   message.channel.send(`${responces[ra]} ${ae}`)
   
-  con.query(`SELECT * FROM corgi_bot WHERE id = ${message.author.id}`) {
+  con.query(`SELECT * FROM corgi_bot WHERE id = ${message.author.id}`, (err) => {
   if(message.author.bot) return;
   let sql;
     sql = "UPDATE corgi_bot SET money = ${money + ae} WHERE id = ${message.author.id}"
-  }
+  })
   con.query(sql, console.log);
 }
 
