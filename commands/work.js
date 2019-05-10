@@ -3,10 +3,17 @@ module.exports.run = (bot, message, args, Discord, con) => {
   let ae = Math.floor(Math.random()*5000)
   let ra = Math.floor(Math.random()*1)
 
-  message.channel.send(`${responces[ra]}`)
+  message.channel.send(`${responces[ra]} ${ae}`)
   
-  con.query(`UPDATE corgi_bot SET money = ${money + ae} WHERE id = '${message.author.id}'`)
+  con.query(`SELECT * FROM corgi_bot WHERE id = ${message.author.id}`) {
+  if(message.author.bot) return;
+  let sql;
+    sql = "UPDATE corgi_bot SET money = ${money + ae} WHERE id = ${message.author.id}"
+  }
+  con.query(sql, console.log);
 }
+
+
 
 module.exports.help = {
   name: "work"
